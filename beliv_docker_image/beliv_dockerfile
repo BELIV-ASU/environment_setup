@@ -1,0 +1,33 @@
+# Use the Ubuntu 20.04 image as a base
+FROM ubuntu:20.04
+
+# Prevents prompts from asking for user input when installing packages
+ENV DEBIAN_FRONTEND noninteractive
+
+# Install necessary packages for Ubuntu desktop and VNC
+RUN apt-get update && apt-get install -y \
+    ubuntu-desktop \
+    vnc4server \
+    x11vnc \
+    xvfb \
+    gnome-panel \
+    gnome-settings-daemon \
+    metacity \
+    nautilus \
+    gnome-terminal \
+    net-tools 
+
+# Clean up APT when done.
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Copy xstartup file to user's home directory
+COPY .xstartup /root/.vnc/
+
+# Set user for VNC server (change it to your own password)
+RUN x11vnc -storepasswd 1234 /root/.vnc/passwd
+
+# Expose VNC server port
+EXPOSE 5900
+
+# Command to run the VNC server
+CMD ["vncserver", "-fg"]
