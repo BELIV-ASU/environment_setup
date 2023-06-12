@@ -1,8 +1,8 @@
-Pull the docker_config folder to the local machine. 
-    First navigate to the desired host folder using cd C:\
-    git pull github.com/BELIV-ASU/environment_setup/beliv_docker_image
+Install docker hub
 
 In cmd,
+    docker pull 4am365/beliv_asu_focal:latest #This pulls the most recent custom docker image to your host system.
+
     docker run -p 5900:5900 -it ubuntu-desktop
 
 In VNC Viewer, connect to:
