@@ -119,7 +119,6 @@ Install and Build CARLA
    sudo apt install ninja-build
    sudo apt install clang-8
    pip install --user setuptools && pip3 install --user -Iv setuptools==67.8.0 && pip install --user distro && pip3 install --user distro && pip install --user wheel && pip3 install --user wheel auditwheel
-   sudo apt install clang
 
 3) Clone the CARLA repository found here: `CARLA GitHub <https://github.com/carla-simulator/carla.git>`_ into your home directory.
 Then go into the carla repository that was just cloned and get the latest assets.
