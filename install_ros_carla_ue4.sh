@@ -30,6 +30,7 @@ echo "export UE4_ROOT=~/UnrealEngine-4.26" >> ~/.bashrc
 sudo apt-get install aria2
 sudo apt install ninja-build
 sudo apt install clang-8
+sudo apt install python-is-python3
 pip install --user pygame numpy && pip3 install --user pygame numpy
 pip install --user setuptools && pip3 install --user -Iv setuptools==67.8.0 && pip install --user distro && pip3 install --user distro && pip install --user wheel && pip3 install --user wheel auditwheel
 cd ~/
