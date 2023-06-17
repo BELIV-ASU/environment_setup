@@ -225,6 +225,7 @@ Download the drivers for Nvidia graphic card by running the following commands.
 After the above steps restart your computer and the run the below command to verify that the drivers were updated successfully
 
 .. code-block:: console
+   
    nvidia-smi
 
 CARLA in Docker
