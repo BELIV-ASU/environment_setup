@@ -119,6 +119,7 @@ Install and Build CARLA
    sudo apt install ninja-build
    sudo apt install clang-8
    pip install --user setuptools && pip3 install --user -Iv setuptools==67.8.0 && pip install --user distro && pip3 install --user distro && pip install --user wheel && pip3 install --user wheel auditwheel
+   sudo apt install clang
 
 3) Clone the CARLA repository found here: `CARLA GitHub <https://github.com/carla-simulator/carla.git>`_ into your home directory.
 Then go into the carla repository that was just cloned and get the latest assets.
@@ -197,6 +198,33 @@ This should change the weather in the simulation running in the UnrealEngine Edi
 
 The above command will open a seperate pygame window that will let you drive a car around the simulation. The pygame window represents a small portion of the simulation running in the UnrealEngine editor. Press ESC on the terminal on which the python3 manual_control.py was run to close the pygame window.
 
+Troubleshooting
+""""
+
+If the simulation is bluish and and the colors are washed out or have a bright white hue to them and you have an Nvidia Graphic card then run the following
+
+Verify that you have a Nvidia Graphic Card
+
+..code-block:: console
+   lspci | grep -i nvidia
+
+If you can see the words "Nvidia Controller" and the word Nvidia highlighted in red then you have an Nvidia graphic card. 
+
+Download the drivers for Nvidia graphic card by running the following commands.
+
+.. code-block:: console
+   wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+   sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+   wget https://developer.download.nvidia.com/compute/cuda/12.1.1/local_installers/cuda-repo-ubuntu2004-12-1-local_12.1.1-530.30.02-1_amd64.deb
+   sudo dpkg -i cuda-repo-ubuntu2004-12-1-local_12.1.1-530.30.02-1_amd64.deb
+   sudo cp /var/cuda-repo-ubuntu2004-12-1-local/cuda-*-keyring.gpg /usr/share/keyrings/
+   sudo apt-get update
+   sudo apt-get -y install cuda
+
+After the above steps restart your computer and the run the below command to verify that the drivers were updated successfully
+
+.. code-block:: console
+   nvidia-smi
 
 CARLA in Docker
 """"
