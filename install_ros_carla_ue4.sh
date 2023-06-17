@@ -1,6 +1,10 @@
 #! bin/bash
 
 sudo apt update && sudo apt upgrade
+sudo apt-get install aria2
+sudo apt install ninja-build
+sudo apt install clang-8
+sudo apt install python-is-python3
 
 # ROS2 Galactic Installation
 sudo apt install software-properties-common
