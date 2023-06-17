@@ -204,7 +204,7 @@ Troubleshooting
 If the simulation is bluish and and the colors are washed out or have a bright white hue to them and you have an Nvidia Graphic card then run the following
 Verify that you have a Nvidia Graphic Card
 
-..code-block:: console
+.. code-block:: console
 
    lspci | grep -i nvidia
 
