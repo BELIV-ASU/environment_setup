@@ -202,10 +202,10 @@ Troubleshooting
 """"
 
 If the simulation is bluish and and the colors are washed out or have a bright white hue to them and you have an Nvidia Graphic card then run the following
-
 Verify that you have a Nvidia Graphic Card
 
 ..code-block:: console
+
    lspci | grep -i nvidia
 
 If you can see the words "Nvidia Controller" and the word Nvidia highlighted in red then you have an Nvidia graphic card. 
@@ -213,6 +213,7 @@ If you can see the words "Nvidia Controller" and the word Nvidia highlighted in 
 Download the drivers for Nvidia graphic card by running the following commands.
 
 .. code-block:: console
+   
    wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
    sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
    wget https://developer.download.nvidia.com/compute/cuda/12.1.1/local_installers/cuda-repo-ubuntu2004-12-1-local_12.1.1-530.30.02-1_amd64.deb
