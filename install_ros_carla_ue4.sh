@@ -6,6 +6,7 @@ sudo apt install ninja-build -y
 sudo apt install clang-8 -y
 sudo apt install python-is-python3 -y
 sudo apt install pip -y
+sudo apt install clang
 
 # ROS2 Galactic Installation
 sudo apt install software-properties-common -y 
