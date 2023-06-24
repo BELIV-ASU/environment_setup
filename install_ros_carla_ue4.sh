@@ -44,6 +44,9 @@ git checkout 0.9.13
 sed -i 's+XERCESC_REPO=https://ftp.cixug.es/apache//xerces/c/3/sources/xerces-c-${XERCESC_VERSION}.tar.gz+XERCESC_REPO=https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-${XERCESC_VERSION}.tar.gz+g' ~/carla/Util/BuildTools/Setup.sh
 
 make PythonAPI 
-cp ~/BELIV/carla-0.9.13-py3.7-linux-x86_64.egg ~/carla/PythonAPI/ 
+cp ~/BELIV/carla-0.9.13-py3.7-linux-x86_64.egg ~/carla/PythonAPI/carla/dist
+cp ~/BELIV/carla-0.9.13-cp38-cp38-linux_x86_64.whl ~/carla/PythonAPI/carla/dist
+pip uninstall carla
+pip install ~/carla/PythonAPI/carla/dist/carla-0.9.13-cp38-cp38-linux_x86_64.whl
 echo "export PYTHONPATH=$PYTHONPATH:~/carla/PythonAPI/carla-0.9.13-py3.7-linux-x86_64.egg" >> ~/.bashrc
 make launch
