@@ -384,28 +384,28 @@ You will have to rotate the view of the car itself a few times to make sure the 
 .. image:: vehicle_factory_icon.png 
 
 
-12. This will open up a window that looks like below. Zoom in until you can see the vehcile factory node in the graph.
+13. This will open up a window that looks like below. Zoom in until you can see the vehcile factory node in the graph.
 
 
 .. image:: vehicle_factory_node.png
 
 
-13. Click the Vehicle Factory node which will open up a menu on the right. Click on the plus icon as shown below to add a new vehicle.
+14. Click the Vehicle Factory node which will open up a menu on the right. Click on the plus icon as shown below to add a new vehicle.
 
 
 .. image:: add_new_vehicle_vf.png
 
 
-14. Scroll down all the way to the last element of the list and click the drop down. Make sure all the variables look exactly as shown below to add the Mustang Mach E to the Vehicle Factory to be able to spawn the car in simulation. 
+15. Scroll down all the way to the last element of the list and click the drop down. Make sure all the variables look exactly as shown below to add the Mustang Mach E to the Vehicle Factory to be able to spawn the car in simulation. 
 
 
 .. image:: mustang_vf_settings.png 
 
 
-15. Hit compile and save on the top left and close the window.
+16. Hit compile and save on the top left and close the window.
 
 
-16. Copy all python files in the folder ~/environment_setup/custom_python_code folder to ~/carla/PythonAPI/examples folder.
+17. Copy all python files in the folder ~/environment_setup/custom_python_code folder to ~/carla/PythonAPI/examples folder.
 
 
 Spawning The Car In The Simulation 
