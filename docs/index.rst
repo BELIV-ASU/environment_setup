@@ -14,7 +14,7 @@ Contents
 
    about
    installation
-   add a new vehicle
+   add new vehicle
    getting started
    usage
    troubleshooting
