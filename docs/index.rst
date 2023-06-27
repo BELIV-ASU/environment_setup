@@ -1,7 +1,7 @@
 Welcome to The BELIV Documentation!
 ===================================
 
-BELIV is working on making an Autonomous Electric Car
+Battery ELectric & Intelligent Vehicle (BELIV) lab at Arizona State University is working on making an Autonomous Electric Car using Autoware, CARLA and ROS2.
 
 .. note::
 
