@@ -67,7 +67,7 @@ If all the above steps worked and the listener node is printing messages to your
    .. code-block:: console
 
       cd ~/
-      git clone https://github.com/VishalNadig/BELIV.git
+      git clone https://github.com/BELIV-ASU/environment_settup.git
 
 
 UnrealEngine Setup
