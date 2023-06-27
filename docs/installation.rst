@@ -491,6 +491,10 @@ By default, the first spawn point of this output is chosen for the car to spawn.
 
 13. When the above command is run the vehicle will spawn at the spawn point shown that was given in "vehicle_spawn.py" file. The spawn point can be changed by replacing the "Transform(Location(x=106.513153, y=-21.554596, z=0), Rotation(pitch=0.000000, yaw=-91.519577, roll=0.000000))" with any one of the outputs from get_spawn_points.py file. But this will spawn the vehicle in a different spawn point.
 
+
+.. warning:: If you change the spawn point from the original in the code, make sure you set the value of z to zero. Otherwise the vehicle will float around the simulation and will not come in contact with the road in the simulation.
+
+
 14. Alternatively, if you do not want to physically move the camera to the spawn point everytime, you can drive to the spawn point in a different car and see that the Mustang Mach E has spawned at the location. To do so, open a new terminal and run the following command
 
 .. code-block:: console
