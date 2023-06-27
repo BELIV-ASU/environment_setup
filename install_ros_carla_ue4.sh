@@ -49,4 +49,12 @@ cp ~/BELIV/carla-0.9.13-cp38-cp38-linux_x86_64.whl ~/carla/PythonAPI/carla/dist
 pip uninstall carla
 pip install ~/carla/PythonAPI/carla/dist/carla-0.9.13-cp38-cp38-linux_x86_64.whl
 echo "export PYTHONPATH=$PYTHONPATH:~/carla/PythonAPI/carla-0.9.13-py3.7-linux-x86_64.egg" >> ~/.bashrc
+
+# Extract and Copy the vehicle blueprint and the vehicle assets to the appropriate folders. Copy the custom python code to the right folders.
+unzip -d ~/carla/Unreal/CarlaUE4/Content/Carla/Static/Vehicles/4Wheeled Mustang_Mache.zip
+unzip -d ~/carla/Unreal/CarlaUE4/Content/Carla/Blueprints/Vehicles Mustang_MachE_Blueprint.zip
+cp ~/environment_setup/custom_python_code/vehicle_spawn.py ~/carla/PythonAPI/examples
+cp ~/environment_setup/custom_python_code/get_spawn_points.py ~/carla/PythonAPI/examples
+
+# Launch CARLA UnrealEngine 4.26
 make launch
