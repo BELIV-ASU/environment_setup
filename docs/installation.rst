@@ -287,13 +287,11 @@ Install nvidia-container-toolkit
 
 
 Adding a new vehicle in CARLA UnrealEngine 4
-
-----
+""""
 
 
 Initial Setup
-
-""""
+''''
 
 .. note:: If you ran the bash script "install_ros_carla_ue4.sh" then all the folders are setup for you automatically. You can skip to the next section if not, follow this guiide to setup the vehicle assets and blueprints in the right folders of CARLA.
 
@@ -304,8 +302,7 @@ Initial Setup
 
 
 Getting The Settings Just Right
-
-""""
+''''
 
 .. image:: folder_and_scene_setup.png
 
@@ -412,7 +409,7 @@ You will have to rotate the view of the car itself a few times to make sure the 
 
 
 Spawning The Car In The Simulation 
-""""
+''''
 
 .. note:: You will need multiple terminals to perform the following steps. I recommend using terminator. It can installed with sudo apt install terminator -y. You will also need to ensure that your simulation is running for all the steps after step 1.
 
