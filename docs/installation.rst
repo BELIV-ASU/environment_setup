@@ -289,16 +289,23 @@ Install nvidia-container-toolkit
 Adding a new vehicle in CARLA UnrealEngine 4
 """"
 
-
 Initial Setup
 ''''
 
 .. note:: If you ran the bash script "install_ros_carla_ue4.sh" then all the folders are setup for you automatically. You can skip to the next section if not, follow this guiide to setup the vehicle assets and blueprints in the right folders of CARLA.
 
 
-1. Unzip the Mustang_Mache.zip file to the ~/carla/Unreal/CarlaUE4/Content/Carla/Static/Vehicles/4Wheeled folder. This contains all the physics asset and the skeletal mesh of the car.
+1. Unzip the Mustang_Mache.zip file to the following folder. This contains all the physics asset and the skeletal mesh of the car.
 
-2. Unzip the Mustang_MachE_Blueprint.zip file to the ~/carla/Unreal/CarlaUE4/Content/Carla/Blueprints/Vehicles folder. This is the core blueprint of the vehicle that UnrealEngine can read and the CARLA simulator can use to render and spawn the vehicle model.
+.. code-block:: console
+
+   ~/carla/Unreal/CarlaUE4/Content/Carla/Static/Vehicles/4Wheeled
+
+2. Unzip the Mustang_MachE_Blueprint.zip file to the folder below. This is the core blueprint of the vehicle that UnrealEngine can read and the CARLA simulator can use to render and spawn the vehicle model.
+
+.. code-block:: console
+
+    ~/carla/Unreal/CarlaUE4/Content/Carla/Blueprints/Vehicles
 
 
 Getting The Settings Just Right
@@ -416,7 +423,7 @@ Spawning The Car In The Simulation
 
 1. Open the ~/carla folder in a terminal and run the command below to launch CarlaUnrealEngine if you have not already. If you have CarlaUnrealEngine already running skip this step.
 
-.. code:: console
+.. code-block:: console
 
     make launch
 
@@ -431,7 +438,7 @@ Spawning The Car In The Simulation
 
 4. To get all the possible spawn points for the car on the map run the get_spawn_points.py in the new terminal by using the following command:
 
-.. code:: console
+.. code-block:: console
 
     python get_spawn_points.py
 
@@ -477,7 +484,7 @@ By default, the first spawn point of this output is chosen for the car to spawn.
 12. Now with this viewing angle, open another terminal. Drag the window of the terminal to the bottom so that you can see the spawn point clearly. Then run the command below in the terminal
 
 
-.. code:: console
+.. code-block:: console
 
     python vehicle_spawn.py
 
@@ -486,7 +493,7 @@ By default, the first spawn point of this output is chosen for the car to spawn.
 
 14. Alternatively, if you do not want to physically move the camera to the spawn point everytime, you can drive to the spawn point in a different car and see that the Mustang Mach E has spawned at the location. To do so, open a new terminal and run the following command
 
-.. code:: console
+.. code-block:: console
 
     python manual_control.py
 
@@ -494,7 +501,7 @@ This will open a pygame window and a vehicle. Use backspace to change the vehicl
 
 Alternatively you can use the --filter tag with manual_control.py to use a car of your choice with the command 
 
-.. code:: console
+.. code-block:: console
 
     python manual_control.py --filter cybertruck
 
