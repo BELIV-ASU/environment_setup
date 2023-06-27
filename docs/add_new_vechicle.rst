@@ -19,29 +19,29 @@ Getting The Settings Just Right
 
 """"
 
-.. image:: ~/environment_setup/docs/folder_and_scene_setup.png
+.. image:: folder_and_scene_setup.png
 
 
 1. If you have followed the above steps or manually unzipped the file to the right folders then your workspace should look like the image above. Your scene in the editor may vary but your folder structure should be exactly the same as above.
 
 
-.. image:: ~/environment_setup/docs/car_physics_icon.png
+.. image:: car_physics_icon.png
 
 
 2. Double click on the icon show above in the folder to open the physics asset of the car. This should open a new window that should look like below
 
 
-.. image:: ~/environment_setup/docs/car_collision_model.png
+.. image:: car_collision_model.png
 
 
 3. If you do not see the collison box around the car and the spherical collision shapes around the wheels then you will have to add it manually. To do that follow the image below
 
-.. image:: ~/environment_setup/docs/add_box_collision.png
+.. image:: add_box_collision.png
 
 
 This should add a box to the vehicle. You will need to resize the box to fit the car. It won't be an exact fit so you will have to make it fit as best as you can. You can do so by using your mouse. The options to move, rotate and resize the box is given in on the top right of the car. See the image below
 
-.. image:: ~/environment_setup/docs/move _rotate_resize.png
+.. image:: move _rotate_resize.png
 
 
 You can rotate the view by clicking the right mouse button and dragging your mouse. You can also move around using the WASD and arrow keys as well.
@@ -58,13 +58,13 @@ You will have to rotate the view of the car itself a few times to make sure the 
 5. After you have added all the collision boxes and spheres around the car, you will need to select any one of the collision shapes a menu will open on the right as shown below. You will need to make the physics type of the shape to "Kinematic" as shown below.
 
 
-.. image:: ~/environment_setup/docs/physcis_type_kinematic.png
+.. image:: physcis_type_kinematic.png
 
 
 6. Next you will have to check the box Under collision tab that says Simulation Generates Hit Events as shown below.
 
 
-.. image:: ~/environment_setup/docs/simulation_generates_collision.png 
+.. image:: simulation_generates_collision.png 
 
 
 7. After all the above steps, click save on the top left and close the window.
@@ -72,19 +72,19 @@ You will have to rotate the view of the car itself a few times to make sure the 
 8. After the above steps go to the Mustang_MachE folder in the blueprints folder as shown in the image below inside UnrealEngine.
 
 
-.. image:: ~/environment_setup/docs/blueprints_folder.png
+.. image:: blueprints_folder.png
 
 
 9. Double click the Blueprint icon with the name BP_Mustang_MachE as shown below.
 
 
-.. image::  ~/environment_setup/docs/blueprints_icon.png
+.. image::  blueprints_icon.png
 
 
 10. In the scale option set all the values to 0.2 as shown below.
 
 
-.. image::  ~/environment_setup/docs/scale_image.png
+.. image::  scale_image.png
 
 
 11. Hit compile and save buttons on top right and close the window. The car now be spawned without any collision detection errors.
@@ -96,25 +96,25 @@ You will have to rotate the view of the car itself a few times to make sure the 
 12. Go to the VehicleFactory icon and double click it in the Content Browser as shown below.
 
 
-.. image:: ~/environment_setup/docs/vehicle_factory_icon.png 
+.. image:: vehicle_factory_icon.png 
 
 
 12. This will open up a window that looks like below. Zoom in until you can see the vehcile factory node in the graph.
 
 
-.. image:: ~/environment_setup/docs/vehicle_factory_node.png
+.. image:: vehicle_factory_node.png
 
 
 13. Click the Vehicle Factory node which will open up a menu on the right. Click on the plus icon as shown below to add a new vehicle.
 
 
-.. image:: ~/environment_setup/docs/add_new_vehicle_vf.png
+.. image:: add_new_vehicle_vf.png
 
 
 14. Scroll down all the way to the last element of the list and click the drop down. Make sure all the variables look exactly as shown below to add the Mustang Mach E to the Vehicle Factory to be able to spawn the car in simulation. 
 
 
-.. image:: ~/environment_setup/docs/mustang_vf_settings.png 
+.. image:: mustang_vf_settings.png 
 
 
 15. Hit compile and save on the top left and close the window.
@@ -139,7 +139,7 @@ Spawning The Car In The Simulation
 2. Once UnrealEngine is up and running hit the play button on the top of the screen to start the simulation. You will know the simulation is running when the camera is now in a different location and the play button has turned into a pause button as shown below.
 
 
-.. image:: ~/environment_setup/docs/simulation_started.png
+.. image:: simulation_started.png
 
 
 3. Open another terminal and go to ~/carla/PythonAPI/examples folder. 
@@ -154,7 +154,7 @@ Spawning The Car In The Simulation
 The output of the above code is to get a list of all the possible spawn points on the map. It should look something like this
 
 
-.. image:: ~/environment_setup/docs/get_spawn_points_output.png
+.. image:: get_spawn_points_output.png
 
 
 By default, the first spawn point of this output is chosen for the car to spawn.
@@ -174,19 +174,19 @@ By default, the first spawn point of this output is chosen for the car to spawn.
 9. Click the mouse on the simualtion and the cursor will disappear, then you can move the camera with WASD. Move the camera straight by pressing and holding the W key. Until you reach the spot shown by the image below
 
 
-.. image:: ~/environment_setup/docs/camera_movement_1.png
+.. image:: camera_movement_1.png
 
 
 10. Then hold the right mouse button and orient the camera towards the white building shown below and then press W key until you reach till the image below.
 
 
-.. image:: ~/environment_setup/docs/white_building.png
+.. image:: white_building.png
 
 
 11. Pan the camera to the left using the right mouse button and dragging the mouse. Then press W until you reach the spot as shown in the below image
 
 
-.. image:: ~/environment_setup/docs/pan_before_spawn.png
+.. image:: pan_before_spawn.png
 
 
 12. Now with this viewing angle, open another terminal. Drag the window of the terminal to the bottom so that you can see the spawn point clearly. Then run the command below in the terminal
