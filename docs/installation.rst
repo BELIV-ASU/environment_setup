@@ -375,7 +375,7 @@ You will have to rotate the view of the car itself a few times to make sure the 
 11. Hit compile and save buttons on top right and close the window. The car now be spawned without any collision detection errors.
 
 
-.. warning:: Step 10 and step 12 are extremely important. If you do not scale the car blueprint as shown in step 10, you will get an error that says "Invalid spawn point. Collision Detected" when you try to spawn the car using the PythonAPI. In step 11 we need to add our car to the VehicleFactory, which is responsible for spawning all the vehicles in the simualtion. If you do not add the vehicles to the VehicleFactory then the vehicle will NOT spawn. 
+.. warning:: Step 10 and step 12 are extremely important. If you do not scale the car blueprint as shown in step 10, you will get an error that says "Invalid spawn point. Collision Detected" when you try to spawn the car using the PythonAPI. In step 12 we need to add our car to the VehicleFactory, which is responsible for spawning all the vehicles in the simualtion. If you do not add the vehicles to the VehicleFactory then the vehicle will NOT spawn. 
 
 
 12. Go to the VehicleFactory icon and double click it in the Content Browser as shown below.
