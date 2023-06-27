@@ -198,7 +198,7 @@ This should change the weather in the simulation running in the UnrealEngine Edi
 
 The above command will open a seperate pygame window that will let you drive a car around the simulation. The pygame window represents a small portion of the simulation running in the UnrealEngine editor. Press ESC on the terminal on which the python3 manual_control.py was run to close the pygame window.
 
-Troubleshooting
+Troubleshooting CARLA Simulation
 """"
 
 If the simulation is bluish and and the colors are washed out or have a bright white hue to them and you have an Nvidia Graphic card then run the following
