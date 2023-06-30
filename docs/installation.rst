@@ -235,56 +235,6 @@ To install CARLA in docker environment you will need two things:
    1) Docker
    2) Nvdia-Container-Toolkit
 
-Docker Installation
-''''
-
-.. code-block:: console
-
-   sudo apt-get remove docker docker-engine docker.io
-   sudo apt-get update
-   sudo apt install docker.io -y
-   sudo snap install docker
-
-Verify that docker was successfully installed on your system by running:
-
-.. code-block:: console
-
-   docker --version
-
-Add docker to sudo group to avoid using sudo everytime to run docker commands:
-
-.. code-block:: console
-
-   sudo groupadd docker
-   sudo usermod -aG docker $USER
-
-Nvidia-Container-Toolkit Installation
-''''
-Nvidia Container Toolkit to give access to Linux Containers to the GPUs.
-
-Add the nvidia-container-toolkit to apt list
-
-.. code-block:: console
-
-   distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
-   && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
-   && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
-         sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
-         sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
-
-Update the sources list of apt to include the installation of nvidia-container-toolkit
-
-.. code-block:: console
-
-      sudo apt update
-
-Install nvidia-container-toolkit
-
-.. code-block:: console
-
-      sudo apt install -y nvidia-container-toolkit
-
-
 
 Adding a new vehicle in CARLA UnrealEngine 4
 """"
