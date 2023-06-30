@@ -1,0 +1,33 @@
+# Use the Ubuntu 20.04 image as a base
+FROM ubuntu:22.04
+
+# Prevents prompts from asking for user input when installing packages
+ENV DEBIAN_FRONTEND noninteractive
+
+# Install necessary packages for Ubuntu desktop and VNC
+RUN apt-get update && -get install -y \
+    ubuntu-desktop \
+    vnc4server \
+    x11vnc \
+    xvfb \
+    gnome-panel \
+    gnome-settings-daemon \
+    metacity \
+    nautilus \
+    gnome-terminal \
+    net-tools \
+    aria2 -y \
+    ninja-build -y \
+    clang-8 -y \
+    python-is-python3 -y \
+    pip -y  \
+    clang  \
+    software-properties-common -y \
+    add-apt-repository universe -y \
+    -get update &&  install curl gnupg lsb-release -y \
+    -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg -y \
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | tee /etc//sources.list.d/ros2.list > /dev/null \
+    -get update -y # update your  repo caches \
+    install ros-humble-desktop -y \
+    echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc \
+    source ~/.bashrc
