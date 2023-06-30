@@ -67,7 +67,7 @@ If all the above steps worked and the listener node is printing messages to your
    .. code-block:: console
 
       cd ~/
-      git clone https://github.com/VishalNadig/BELIV.git
+      git clone https://github.com/BELIV-ASU/environment_settup.git
 
 
 UnrealEngine Setup
@@ -198,7 +198,7 @@ This should change the weather in the simulation running in the UnrealEngine Edi
 
 The above command will open a seperate pygame window that will let you drive a car around the simulation. The pygame window represents a small portion of the simulation running in the UnrealEngine editor. Press ESC on the terminal on which the python3 manual_control.py was run to close the pygame window.
 
-Troubleshooting
+Troubleshooting CARLA Simulation
 """"
 
 If the simulation is bluish and and the colors are washed out or have a bright white hue to them and you have an Nvidia Graphic card then run the following
@@ -228,67 +228,9 @@ After the above steps restart your computer and the run the below command to ver
    
    nvidia-smi
 
-CARLA in Docker
-""""
-
-To install CARLA in docker environment you will need two things:
-   1) Docker
-   2) Nvdia-Container-Toolkit
-
-Docker Installation
-''''
-
-.. code-block:: console
-
-   sudo apt-get remove docker docker-engine docker.io
-   sudo apt-get update
-   sudo apt install docker.io -y
-   sudo snap install docker
-
-Verify that docker was successfully installed on your system by running:
-
-.. code-block:: console
-
-   docker --version
-
-Add docker to sudo group to avoid using sudo everytime to run docker commands:
-
-.. code-block:: console
-
-   sudo groupadd docker
-   sudo usermod -aG docker $USER
-
-Nvidia-Container-Toolkit Installation
-''''
-Nvidia Container Toolkit to give access to Linux Containers to the GPUs.
-
-Add the nvidia-container-toolkit to apt list
-
-.. code-block:: console
-
-   distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
-   && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
-   && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
-         sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
-         sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
-
-Update the sources list of apt to include the installation of nvidia-container-toolkit
-
-.. code-block:: console
-
-      sudo apt update
-
-Install nvidia-container-toolkit
-
-.. code-block:: console
-
-      sudo apt install -y nvidia-container-toolkit
-
-
 
 Adding a new vehicle in CARLA UnrealEngine 4
 """"
-
 
 Initial Setup
 ''''
@@ -296,9 +238,17 @@ Initial Setup
 .. note:: If you ran the bash script "install_ros_carla_ue4.sh" then all the folders are setup for you automatically. You can skip to the next section if not, follow this guiide to setup the vehicle assets and blueprints in the right folders of CARLA.
 
 
-1. Unzip the Mustang_Mache.zip file to the ~/carla/Unreal/CarlaUE4/Content/Carla/Static/Vehicles/4Wheeled folder. This contains all the physics asset and the skeletal mesh of the car.
+1. Unzip the Mustang_Mache.zip file to the following folder. This contains all the physics asset and the skeletal mesh of the car.
 
-2. Unzip the Mustang_MachE_Blueprint.zip file to the ~/carla/Unreal/CarlaUE4/Content/Carla/Blueprints/Vehicles folder. This is the core blueprint of the vehicle that UnrealEngine can read and the CARLA simulator can use to render and spawn the vehicle model.
+.. code-block:: console
+
+   ~/carla/Unreal/CarlaUE4/Content/Carla/Static/Vehicles/4Wheeled
+
+2. Unzip the Mustang_MachE_Blueprint.zip file to the folder below. This is the core blueprint of the vehicle that UnrealEngine can read and the CARLA simulator can use to render and spawn the vehicle model.
+
+.. code-block:: console
+
+    ~/carla/Unreal/CarlaUE4/Content/Carla/Blueprints/Vehicles
 
 
 Getting The Settings Just Right
@@ -340,7 +290,7 @@ You will have to rotate the view of the car itself a few times to make sure the 
 .. warning:: The most important thing is to make the collision box of the car be above the collision spheres of the wheels. If you have to add the collision boxes and spheres manually, please make sure it is as close to what is shown in step 2 above. 
 
 
-5. After you have added all the collision boxes and spheres around the car, you will need to select any one of the collision shapes a menu will open on the right as shown below. You will need to make the physics type of the shape to "Kinematic" as shown below.
+5. After you have added all the collision boxes and spheres around the car, you will need to select any one of the collision shapes a menu will open on the right as shown below. You will need to make the physics type of the shape to "Default" as shown below.
 
 
 .. image:: physcis_type_kinematic.png
@@ -384,28 +334,28 @@ You will have to rotate the view of the car itself a few times to make sure the 
 .. image:: vehicle_factory_icon.png 
 
 
-12. This will open up a window that looks like below. Zoom in until you can see the vehcile factory node in the graph.
+13. This will open up a window that looks like below. Zoom in until you can see the vehcile factory node in the graph.
 
 
 .. image:: vehicle_factory_node.png
 
 
-13. Click the Vehicle Factory node which will open up a menu on the right. Click on the plus icon as shown below to add a new vehicle.
+14. Click the Vehicle Factory node which will open up a menu on the right. Click on the plus icon as shown below to add a new vehicle.
 
 
 .. image:: add_new_vehicle_vf.png
 
 
-14. Scroll down all the way to the last element of the list and click the drop down. Make sure all the variables look exactly as shown below to add the Mustang Mach E to the Vehicle Factory to be able to spawn the car in simulation. 
+15. Scroll down all the way to the last element of the list and click the drop down. Make sure all the variables look exactly as shown below to add the Mustang Mach E to the Vehicle Factory to be able to spawn the car in simulation. 
 
 
 .. image:: mustang_vf_settings.png 
 
 
-15. Hit compile and save on the top left and close the window.
+16. Hit compile and save on the top left and close the window.
 
 
-16. Copy all python files in the folder ~/environment_setup/custom_python_code folder to ~/carla/PythonAPI/examples folder.
+17. Copy all python files in the folder ~/environment_setup/custom_python_code folder to ~/carla/PythonAPI/examples folder.
 
 
 Spawning The Car In The Simulation 
@@ -416,7 +366,7 @@ Spawning The Car In The Simulation
 
 1. Open the ~/carla folder in a terminal and run the command below to launch CarlaUnrealEngine if you have not already. If you have CarlaUnrealEngine already running skip this step.
 
-.. code:: console
+.. code-block:: console
 
     make launch
 
@@ -431,7 +381,7 @@ Spawning The Car In The Simulation
 
 4. To get all the possible spawn points for the car on the map run the get_spawn_points.py in the new terminal by using the following command:
 
-.. code:: console
+.. code-block:: console
 
     python get_spawn_points.py
 
@@ -477,16 +427,20 @@ By default, the first spawn point of this output is chosen for the car to spawn.
 12. Now with this viewing angle, open another terminal. Drag the window of the terminal to the bottom so that you can see the spawn point clearly. Then run the command below in the terminal
 
 
-.. code:: console
+.. code-block:: console
 
     python vehicle_spawn.py
 
 
 13. When the above command is run the vehicle will spawn at the spawn point shown that was given in "vehicle_spawn.py" file. The spawn point can be changed by replacing the "Transform(Location(x=106.513153, y=-21.554596, z=0), Rotation(pitch=0.000000, yaw=-91.519577, roll=0.000000))" with any one of the outputs from get_spawn_points.py file. But this will spawn the vehicle in a different spawn point.
 
+
+.. warning:: If you change the spawn point from the original in the code, make sure you set the value of z to zero. Otherwise the vehicle will float around the simulation and will not come in contact with the road in the simulation.
+
+
 14. Alternatively, if you do not want to physically move the camera to the spawn point everytime, you can drive to the spawn point in a different car and see that the Mustang Mach E has spawned at the location. To do so, open a new terminal and run the following command
 
-.. code:: console
+.. code-block:: console
 
     python manual_control.py
 
@@ -494,7 +448,7 @@ This will open a pygame window and a vehicle. Use backspace to change the vehicl
 
 Alternatively you can use the --filter tag with manual_control.py to use a car of your choice with the command 
 
-.. code:: console
+.. code-block:: console
 
     python manual_control.py --filter cybertruck
 

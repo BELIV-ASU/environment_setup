@@ -1,3 +1,6 @@
+"""
+Python code to get valid spawn points around the map.
+"""
 import glob
 import sys
 import carla
@@ -19,4 +22,5 @@ def spawn_point():
     except Exception as exception:
         print(exception)
 
-spawn_point()
+if __name__ == '__main__':
+    spawn_point()
