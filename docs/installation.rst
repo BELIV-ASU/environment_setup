@@ -228,13 +228,6 @@ After the above steps restart your computer and the run the below command to ver
    
    nvidia-smi
 
-CARLA in Docker
-""""
-
-To install CARLA in docker environment you will need two things:
-   1) Docker
-   2) Nvdia-Container-Toolkit
-
 
 Adding a new vehicle in CARLA UnrealEngine 4
 """"
